@@ -1,7 +1,6 @@
 import { Client } from 'ts-postgres';
 
-export async function QueryForEmailList(columnToSearchFor: string, ID: string) {
-    // https://stackabuse.com/using-postgresql-with-nodejs-and-node-postgres/ and https://www.npmjs.com/package/ts-postgres and  https://node-postgres.com/features/types/
+export async function QueryForEmailList(columnToSearchFor: string, ID: string) { // https://stackabuse.com/using-postgresql-with-nodejs-and-node-postgres/ and https://www.npmjs.com/package/ts-postgres and  https://node-postgres.com/features/types/
     var reply: any;
     var DBPort: any = process.env.POSTGRESQL_PORT;
     const Port: number = +DBPort;
