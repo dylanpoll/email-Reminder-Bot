@@ -1,9 +1,5 @@
-# React-With-TS-Sites-Relaunch
+# Email Reminder Bot
+This just emails you the countdown till a certain day 
+It uses a postgres query to pull all emails that need to be emails and has some countdown logic.
 
-I am re launching my sites with TS instead of JS and doing a ground up rebuild with the front and back end.
-I will be at the end packing my front and back into seperate docker containers.
-
-currently re releasing : 
-devdylan.me
-creepcript.rip
-codekarma.club
+I have this on a cron job.
