@@ -28,9 +28,9 @@ export async function QueryForEmailList(columnToSearchFor: string, ID: string) {
 /*
 //https://node-postgres.com/features/types/
 const newData = {
-    email : "Jennifer.berner.ext@siemens-energy.com",
-    name:  "Somerild",
-    class: "Witch of Nightmares"
+    email : "",
+    name:  "",
+    class: ""
 };
 await client.query('INSERT INTO emaillist(data) VALUES($1)', [newData]);
 
