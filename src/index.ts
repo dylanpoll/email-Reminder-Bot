@@ -7,7 +7,6 @@ dotenv.config(); // this must be placed before any process.env calls.
 
 const main = async () => {
     var Difference_in_Days_string = await countDownUtil(); //gets the countdown value
-    console.log(Difference_in_Days_string);
     var i = 1;
     while(true){
         var ID : string = ''+i;         
