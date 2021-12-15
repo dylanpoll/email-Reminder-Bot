@@ -6,6 +6,12 @@ import { countDownUtil } from "./countDownUtil";
 import dotenv from 'dotenv'; 
 dotenv.config(); 
 
+
+/*
+NEXT STEP : make general DB client function, make all query functions generate a string to send to that function.
+this should help reduce bloat in code as there really should only need to be on client object communicating with the db.
+*/
+
 const main = async () => {
     //newUserQuery("test@emailtest.com" , "testName" , "testClass"); // userEmail , userName , userClass
     var Difference_in_Days_string = await countDownUtil(); //gets the countdown value
