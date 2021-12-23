@@ -16,8 +16,8 @@ export async function QueryForEmailList(columnToSearchFor: string, ID: string) {
     client.connect();
 
     try { //try is where we form the query and attempt to submit it.
-        const result: any = await client.query("SELECT data -> '" + columnToSearchFor + "' as email FROM emaillist WHERE id = " + ID); //made this to funnel any search for the json in the DB
-         await client.end();
+        const result: any = await client.query("SELECT data -> '" + columnToSearchFor + "' as email FROM useremails WHERE id = " + ID); //made this to funnel any search for the json in the DB
+        await client.end();
         for await (const row of result) {
             reply = row.get('email'); //assigns the reply to what we indicated the search is for and attaches it according to the email tag
         }

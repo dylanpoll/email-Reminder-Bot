@@ -6,14 +6,9 @@ import { countDownUtil } from "./countDownUtil";
 import dotenv from 'dotenv'; 
 dotenv.config(); 
 
-
-/*
-NEXT STEP : make general DB client function, make all query functions generate a string to send to that function.
-this should help reduce bloat in code as there really should only need to be on client object communicating with the db.
-*/
-
 const main = async () => {
-    //newUserQuery("test@emailtest.com" , "testName" , "testClass"); // userEmail , userName , userClass
+    //await newUserQuery();
+    
     var Difference_in_Days_string = await countDownUtil(); //gets the countdown value
     var id = 1;
 
@@ -21,12 +16,12 @@ const main = async () => {
         let ID : string = ''+id;
         let RecieverEmail : string | undefined =  await QueryForEmailList( "email", ID); //postgresql query function pulls values from the db dynamically
         
-        if( RecieverEmail === undefined ){  //this just kills the attempts whenever there is no listed DB value.
+        if( RecieverEmail === undefined ){  //this just kills the attempts whenever there is no listed DB value. is set !== can be used to add a new email without sending emails.
             return false;
         }
 
         else{
-            //if(id === 1){  //if statement used to test out particular emails during trouble shooting... don't want to spam everyone on the list.
+            //if(id === 2){  //if statement used to test out particular emails during trouble shooting... don't want to spam everyone on the list.
             let RecieverClass : string | undefined =  await QueryForEmailList( "class", ID);
             let RecieverName : string | undefined =  await QueryForEmailList( "name", ID);
             let subTitleLine : string|undefined = RecieverName + "....";
@@ -35,7 +30,6 @@ const main = async () => {
             sendmail( RecieverEmail , subTitleLine , mailBody );
             //}
         };
-
         id++;
     };
 }
