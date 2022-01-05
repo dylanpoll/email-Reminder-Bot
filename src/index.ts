@@ -1,4 +1,4 @@
-import {htmlEmailBody} from "./nodeMailer/htmlEmailBody";
+import { htmlEmailBody } from "./nodeMailer/htmlEmailBody";
 import { sendmail } from "./nodeMailer/Nodemailer";
 import { QueryForEmailList } from "./PostgresQuery/QueryForEmailList";
 import { countDownUtil } from "./countDownUtil";
