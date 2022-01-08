@@ -17,7 +17,7 @@ const main = async () => {
         let RecieverEmail : string | undefined =  await QueryForEmailList( "email", ID); //postgresql query function pulls values from the db dynamically
         
         if( RecieverEmail === undefined ){  //this just kills the attempts whenever there is no listed DB value. is set !== can be used to add a new email without sending emails.
-            console.log("Email List Returned Undefined, closing attempt instance.");  // just for server logs.
+            console.log("Email List Returned Undefined when looking for a user at ID: " + id + " .. closing attempt instance as there are no more users to email.");  // just for server logs.
             return false;
         }
 
